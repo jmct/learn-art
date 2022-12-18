@@ -32,8 +32,8 @@ makePPM :: Int -> Int -> [Gen Bool] -> String
 makePPM w h gens = unlines ["P3", show (2 * w + 1) ++ " " ++ show h, show 255]
                 ++ unlines (map (unwords . map bitIt . bound w) (take h gens))
 
-bitIt False = "63   63  63" -- A blue that I like
-bitIt True  = "127 159 127" -- A magenta that I like
+bitIt False = "251 246 227" -- The background color (off-white)
+bitIt True  = "211  54 130" -- The foreground color (magenta-like)
 
 main = do
   -- Shift the focus of the initial Configuration right so that we get
